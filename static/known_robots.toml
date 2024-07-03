@@ -9,11 +9,26 @@ that Amazonbot significantly increased its activity around the time everyone sta
 """
 reference = ""
 
+
 [[known_robots]]
 company = "Anthropic"
 user_agent = "ClaudeBot"
 comment = ""
 reference = "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+
+
+[[known_robots]]
+company = "Anthropic"
+user_agent = "anthropic-ai"
+comment = "Not referenced in Anthropic's documentation directly"
+reference = ""
+
+
+[[known_robots]]
+company = "Anthropic"
+user_agent = "Claude-Web"
+comment = "Not referenced in Anthropic's documentation directly"
+reference = ""
 
 
 [[known_robots]]
@@ -33,6 +48,26 @@ comment = """\
 Common Crawl is not a company per se, but Common Crawl-collected web crawls are used to train LLMs.
     """
 reference = "https://commoncrawl.org/ccbot"
+
+
+[[known_robots]]
+company = "Facebook"
+user_agent = "FacebookBot"
+comment = """\
+This is the user agent Facebook uses for LLM training. Link previews are made with a
+[different user agent](https://developers.facebook.com/docs/sharing/webmasters/crawler/).
+"""
+reference = "https://developers.facebook.com/docs/sharing/bot"
+
+
+[[known_robots]]
+company = "Facebook"
+user_agent = "FacebookBot"
+comment = """\
+This is the user agent Facebook uses for LLM training. Link previews are made with a
+[different user agent](https://developers.facebook.com/docs/sharing/webmasters/crawler/).
+"""
+reference = "https://developers.facebook.com/docs/sharing/bot"
 
 
 [[known_robots]]
@@ -62,3 +97,19 @@ disables OpenAI crawling entirely.
     """
 reference = "https://platform.openai.com/docs/gptbot"
 
+
+[[known_robots]]
+company = "Webz.io"
+user_agent = "omgilibot"
+comment = """\
+This bot belongs to a company selling web scrapped data to other companies.
+The data [is used for LLM training](https://webz.io/blog/machine-learning/large-language-models-what-your-data-must-include/).
+"""
+reference = "https://webz.io/blog/web-data/what-is-the-omgili-bot-and-why-is-it-crawling-your-website/"
+
+# todo:
+# User-agent: cohere-ai
+# User-agent: PerplexityBot
+# User-agent: YouBot
+# User-agent: Bytespider
+# User-agent: Diffbot
