@@ -59,3 +59,16 @@ that Amazonbot significantly increased its activity around the time everyone sta
 [example two](https://benjojo.co.uk/u/benjojo/h/HJnMFTlX63TF42t272).
 """
 reference = ""
+
+# todo:
+# User-agent: FacebookBot
+# User-agent: anthropic-ai
+# User-agent: Claude-Web
+# User-agent: cohere-ai
+# User-agent: Omgilibot
+# User-agent: omgilibot
+# User-agent: omgili
+# User-agent: PerplexityBot
+# User-agent: YouBot
+# User-agent: Bytespider
+# User-agent: Diffbot
