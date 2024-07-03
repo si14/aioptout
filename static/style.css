@@ -29,6 +29,7 @@ h3 {
 
 footer {
   margin-top: calc(0.83em * 2);
+  font-size: 0.85rem;
 }
 
 #tldr {
@@ -71,15 +72,11 @@ footer {
 }
 
 .inline-pre {
-  display: inline-block;
-  background: oklch(95% 0 0);
-  border: 1px solid oklch(70% 0 0);
-  padding: 0 0.1em;
   font-family: var(--mono), monospace;
 }
 
 .user-agent {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 .entry {
