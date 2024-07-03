@@ -82,15 +82,6 @@ This is the user agent Facebook uses for LLM training. Link previews are made wi
 reference = "https://developers.facebook.com/docs/sharing/bot"
 
 [[known_robots]]
-company = "Facebook"
-user_agent = "FacebookBot"
-comment = """\
-This is the user agent Facebook uses for LLM training. Link previews are made with a
-[different user agent](https://developers.facebook.com/docs/sharing/webmasters/crawler/).
-"""
-reference = "https://developers.facebook.com/docs/sharing/bot"
-
-[[known_robots]]
 company = "Webz.io"
 user_agent = "omgilibot"
 comment = """\

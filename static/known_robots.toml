@@ -61,16 +61,6 @@ reference = "https://developers.facebook.com/docs/sharing/bot"
 
 
 [[known_robots]]
-company = "Facebook"
-user_agent = "FacebookBot"
-comment = """\
-This is the user agent Facebook uses for LLM training. Link previews are made with a
-[different user agent](https://developers.facebook.com/docs/sharing/webmasters/crawler/).
-"""
-reference = "https://developers.facebook.com/docs/sharing/bot"
-
-
-[[known_robots]]
 company = "Google"
 user_agent = "Google-Extended"
 comment = """\
@@ -112,7 +102,7 @@ reference = "https://webz.io/blog/web-data/what-is-the-omgili-bot-and-why-is-it-
 company = "Webz.io"
 user_agent = "omgili"
 comment = ""
-reference = ""
+reference = "https://webz.io/blog/web-data/what-is-the-omgili-bot-and-why-is-it-crawling-your-website/"
 
 
 # todo:
