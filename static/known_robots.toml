@@ -107,6 +107,14 @@ The data [is used for LLM training](https://webz.io/blog/machine-learning/large-
 """
 reference = "https://webz.io/blog/web-data/what-is-the-omgili-bot-and-why-is-it-crawling-your-website/"
 
+
+[[known_robots]]
+company = "Webz.io"
+user_agent = "omgili"
+comment = ""
+reference = ""
+
+
 # todo:
 # User-agent: cohere-ai
 # User-agent: PerplexityBot

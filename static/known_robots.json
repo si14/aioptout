@@ -71,6 +71,12 @@
       "user_agent": "omgilibot",
       "comment": "This bot belongs to a company selling web scrapped data to other companies.\nThe data [is used for LLM training](https://webz.io/blog/machine-learning/large-language-models-what-your-data-must-include/).\n",
       "reference": "https://webz.io/blog/web-data/what-is-the-omgili-bot-and-why-is-it-crawling-your-website/"
+    },
+    {
+      "company": "Webz.io",
+      "user_agent": "omgili",
+      "comment": "",
+      "reference": ""
     }
   ]
 }
