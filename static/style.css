@@ -47,7 +47,7 @@ footer {
   user-select: all;
 
   max-width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 
   font-size: 0.7rem;
 
