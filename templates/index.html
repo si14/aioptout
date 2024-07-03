@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    {% set meta_title = "AI opt-out for webdevelopers" %}
+    {% set meta_description = "How to opt your website out from AI scraping" %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {# <link rel="icon" href="{{ get_url(path='favicon.ico') }}" sizes="32x32" />
+    <link rel="icon" href="{{ get_url(path='icon.svg') }}" type="image/svg+xml" /> #}
+
+    <meta name="description" content="{{ meta_description }}" />
+
+    {# <meta name="twitter:image:src" content="https://late-mate.com/card.jpg" />
+    <meta name="twitter:card" content="summary_large_image" /> #}
+    <meta name="twitter:title" content="{{ meta_title }}" />
+    <meta name="twitter:description" content="{{ meta_description }}" />
+
+    {# <meta property="og:image" content="https://late-mate.com/card.jpg" />  #}
+
+    <meta property="og:image:alt" content="{{ meta_description }}" />
+    <meta property="og:site_name" content="{{ meta_title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ meta_title }}" />
+    <meta property="og:url" content="https://aioptout.dev/" />
+    <meta property="og:description" content="{{ meta_description }}" />
+
+    <title>AI opt-out</title>
+
+    {% include "style.html" %}
+  </head>
+
+  <body>
+    <main>
+      {% set data = load_data(path='static/known_robots.toml') %}
+      {% set repo_url = 'https://github.com/si14/aioptout' %}
+
+      <p id="tldr">
+        <strong>TL;DR</strong>: copy the following to your <span class="inline-pre">robots.txt</span> (<a
+          href="https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt"
+          target="_blank"
+          >what's robots.txt</a
+        >):
+      </p>
+
+      <div class="pre-wrapper">
+        <pre id="tldrcopy">{% include 'robots_txt_template.html' %}</pre>
+        <button id="tldrcopybutton">Copy to clipboard</button>
+      </div>
+
+      <h1><span class="green">Opt out</span> of AI/LLM training datasets</h1>
+
+      <p><span class="sitename">aioptout.dev</span> is a collection of known user agents that belong to AI scrapers.</p>
+
+      <p>
+        You can use the snippet above, or use <a href="{{ get_url(path="known_robots.toml") }}">toml</a> or
+        <a href="{{ repo_url }}">json</a> datasets to generate your
+        <span class="inline-pre">robots.txt</span> dynamically.
+      </p>
+
+      <p>
+        Corrections or missing scrapers? Please create an issue or send a pull request
+        <a href="">on Github.</a>
+      </p>
+
+      <h2>Conspicuously missing companies</h2>
+
+      <h3>Microsoft</h3>
+      <div class="entry">
+        <p>Microsoft is active in LLM space, but doesn't provide any way to opt out.</p>
+        <p>
+          The Verge:
+          <a href="https://www.theverge.com/2024/6/28/24188391/microsoft-ai-suleyman-social-contract-freeware"
+            >Microsoft’s AI boss thinks it’s perfectly okay to steal content if it’s on the open web</a
+          >
+        </p>
+      </div>
+
+      <h2>Known companies</h2>
+      {% for company, entries in data.known_robots | group_by(attribute='company') %}
+        <h3 id="{{ company | slugify }}">{{ company }}</h3>
+        {% for entry in entries %}
+          <div class="entry">
+            <p class="user-agent">
+              <span class="inline-pre">{{ entry.user_agent }}</span>
+              {%- if entry.reference -%}
+                , <a href="{{ entry.reference }}" target="_blank">reference</a>
+              {%- else -%}
+                , no canonical reference yet
+              {% endif %}
+            </p>
+
+            {% if entry.comment %}
+              <div class="comment">{{ entry.comment | markdown | safe }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endfor %}
+
+      <h2>This is <span class="red">bollocks</span></h2>
+      <p>We shouldn't be chasing user agent strings.</p>
+      <p>
+        The contract underpinning the open web is simple: people pour their souls into content they create and publish,
+        their websites gets scraped by search engines, search engines get information to show on the search page next to
+        their ads, and in return authors get people on their websites.
+      </p>
+      <p>
+        AI scrapers tear this contract apart. You publish into the void, and AI scrapers incorporate your ideas into LLM
+        weights during training. There will be no attribution, no exposure, no people coming back to you, just faceless
+        chatbot responses rephrasing your insights. For them, it's just "training material".
+      </p>
+
+      <p>Then the very companies who scraped your content sell it back to you for a subscription payment.</p>
+
+      <p class="cta">AI scraping should be opt-in.</p>
+
+      <details class="sources">
+        <summary>Sources used</summary>
+        <ul>
+          <li>
+            <a
+              href="https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/"
+              target="_blank"
+              >https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/</a
+            >
+          </li>
+          <li>
+            <a href="https://nytimes.com/robots.txt" target="_blank">https://nytimes.com/robots.txt</a>
+          </li>
+          <li>
+            <a href="https://www.wired.com/robots.txt" target="_blank">https://www.wired.com/robots.txt</a>
+          </li>
+          <li>
+            <a href="https://darkvisitors.com/agents" target="_blank">https://darkvisitors.com/agents</a>
+          </li>
+        </ul>
+      </details>
+    </main>
+
+    <footer class="footer">
+      <p>💌 to creators by <a href="https://dgroshev.com">Dan Groshev</a>. Last updated at {{ now() | date }}</p>
+    </footer>
+
+    {# analytics #}
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script defer data-domain="aioptout.dev" src="https://plausible.io/js/script.outbound-links.js"></script>
+
+    <script>
+      const button = document.getElementById('tldrcopybutton');
+      const text = document.getElementById('tldrcopy').innerText;
+      const originalButton = button.innerText;
+
+      let reverter = null;
+
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (error) {
+          console.error(error.message);
+        }
+
+        button.innerText = 'Copied!';
+        if (reverter !== null) {
+          clearTimeout(reverter);
+        }
+        reverter = setTimeout(() => {
+          button.innerText = originalButton;
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

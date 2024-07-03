@@ -1,0 +1,46 @@
+{
+  "known_robots": [
+    {
+      "company": "Amazon",
+      "user_agent": "Amazonbot",
+      "comment": "While not directly confirmed in the [documentation](https://developer.amazon.com/amazonbot), there are reports\nthat Amazonbot significantly increased its activity around the time everyone started training LLMs.\n[Example one](https://gabrielsimmer.com/blog/stop-scraping-git-forge),\n[example two](https://benjojo.co.uk/u/benjojo/h/HJnMFTlX63TF42t272).\n",
+      "reference": ""
+    },
+    {
+      "company": "Anthropic",
+      "user_agent": "ClaudeBot",
+      "comment": "",
+      "reference": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+    },
+    {
+      "company": "Apple",
+      "user_agent": "Applebot-Extended",
+      "comment": "Applebot-Extended doesn't crawl pages directly, but presence of this user agent in robots.txt is used\nas a signal to opt-out data collected by Applebot from LLM training.\n    ",
+      "reference": "https://support.apple.com/en-gb/119829"
+    },
+    {
+      "company": "Common Crawl",
+      "user_agent": "CCBot",
+      "comment": "Common Crawl is not a company per se, but Common Crawl-collected web crawls are used to train LLMs.\n    ",
+      "reference": "https://commoncrawl.org/ccbot"
+    },
+    {
+      "company": "Google",
+      "user_agent": "Google-Extended",
+      "comment": "As of 2024-07-03, \"Google-Extended does not impact a site's inclusion or ranking in Google Search.\"\n    ",
+      "reference": "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers#google-extended"
+    },
+    {
+      "company": "OpenAI",
+      "user_agent": "GPTBot",
+      "comment": "",
+      "reference": "https://platform.openai.com/docs/gptbot"
+    },
+    {
+      "company": "OpenAI",
+      "user_agent": "ChatGPT-User",
+      "comment": "Crawls on behalf of a ChatGPT user.\n\nAs of 2024-07-03, OpenAI claims that having either GPTBot or ChatGPT-User in robots.txt\ndisables OpenAI crawling entirely.\n    ",
+      "reference": "https://platform.openai.com/docs/gptbot"
+    }
+  ]
+}

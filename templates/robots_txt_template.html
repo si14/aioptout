@@ -1,0 +1,13 @@
+{%- set data = load_data(path='static/known_robots.toml') -%}
+## AI opt-out rules (see aioptout.dev)
+{% for company, entries in data.known_robots | group_by(attribute='company') %}
+# <a href="#{{ company | slugify }}">{{ company }}</a>
+{%- for entry in entries %}
+User-agent: {{ entry.user_agent }}
+Disallow: /
+{%- if not loop.last %}
+{%- endif -%}
+{%- endfor -%}
+{%- if not loop.last %}
+{% endif -%}
+{%- endfor -%}

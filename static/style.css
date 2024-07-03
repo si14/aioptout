@@ -1,0 +1,96 @@
+:root {
+  --green: oklch(60% 0.22 143);
+  --red: oklch(60% 0.22 22);
+  --sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  --mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+body {
+  font-family: var(--sans), sans-serif;
+}
+
+pre {
+  font-family: var(--mono), monospace;
+}
+
+h1 {
+  margin-top: calc(0.67em * 2);
+}
+
+h2 {
+  margin-top: calc(0.83em * 2);
+}
+
+h3 {
+  margin-top: calc(1em * 2);
+}
+
+footer {
+  margin-top: calc(0.83em * 2);
+}
+
+#tldr {
+  font-size: 1.2rem;
+}
+
+#tldrcopy {
+  background: oklch(95% 0 0);
+  border: 1px solid oklch(70% 0 0);
+
+  width: min-content;
+  padding: 1rem;
+  margin: 1rem 0;
+
+  user-select: all;
+
+  a {
+    text-decoration-style: dashed;
+  }
+}
+
+.pre-wrapper {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+.sitename {
+  color: var(--green);
+  font-weight: bolder;
+}
+
+.inline-pre {
+  display: inline-block;
+  background: oklch(95% 0 0);
+  border: 1px solid oklch(70% 0 0);
+  padding: 0 0.1em;
+  font-family: var(--mono), monospace;
+}
+
+.user-agent {
+  margin-top: 2em;
+}
+
+.entry {
+  margin-left: 1em;
+}
+
+.cta {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.sources {
+  margin-top: calc(0.83em * 2);
+}

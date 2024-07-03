@@ -1,0 +1,10 @@
+{
+  "name": "aioptout",
+  "packageManager": "yarn@4.3.1",
+  "devDependencies": {
+    "prettier-plugin-jinja-template": "^1.4.1"
+  },
+  "dependencies": {
+    "prettier": "^3.3.2"
+  }
+}

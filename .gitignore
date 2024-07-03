@@ -1,0 +1,4 @@
+.venv/
+.yarn/
+node_modules/
+public/

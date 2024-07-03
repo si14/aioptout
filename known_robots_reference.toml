@@ -1,0 +1,61 @@
+# This file is written by hand and is used to generate files in static/
+# Unlike this one, files in static/ are sorted by company name
+
+[[known_robots]]
+company = "OpenAI"
+user_agent = "GPTBot"
+comment = ""
+reference = "https://platform.openai.com/docs/gptbot"
+
+[[known_robots]]
+company = "OpenAI"
+user_agent = "ChatGPT-User"
+comment = """\
+Crawls on behalf of a ChatGPT user.
+
+As of 2024-07-03, OpenAI claims that having either GPTBot or ChatGPT-User in robots.txt
+disables OpenAI crawling entirely.
+    """
+reference = "https://platform.openai.com/docs/gptbot"
+
+[[known_robots]]
+company = "Google"
+user_agent = "Google-Extended"
+comment = """\
+As of 2024-07-03, "Google-Extended does not impact a site's inclusion or ranking in Google Search."
+    """
+reference = "https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers#google-extended"
+
+[[known_robots]]
+company = "Anthropic"
+user_agent = "ClaudeBot"
+comment = ""
+reference = "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+
+[[known_robots]]
+company = "Common Crawl"
+user_agent = "CCBot"
+comment = """\
+Common Crawl is not a company per se, but Common Crawl-collected web crawls are used to train LLMs.
+    """
+reference = "https://commoncrawl.org/ccbot"
+
+[[known_robots]]
+company = "Apple"
+user_agent = "Applebot-Extended"
+comment = """\
+Applebot-Extended doesn't crawl pages directly, but presence of this user agent in robots.txt is used
+as a signal to opt-out data collected by Applebot from LLM training.
+    """
+reference = "https://support.apple.com/en-gb/119829"
+
+[[known_robots]]
+company = "Amazon"
+user_agent = "Amazonbot"
+comment = """\
+While not directly confirmed in the [documentation](https://developer.amazon.com/amazonbot), there are reports
+that Amazonbot significantly increased its activity around the time everyone started training LLMs.
+[Example one](https://gabrielsimmer.com/blog/stop-scraping-git-forge),
+[example two](https://benjojo.co.uk/u/benjojo/h/HJnMFTlX63TF42t272).
+"""
+reference = ""

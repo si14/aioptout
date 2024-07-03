@@ -1,0 +1,4 @@
+node_modules/
+dist/
+public/
+templates/robots_txt_template.html

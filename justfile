@@ -1,0 +1,2 @@
+prepare:
+    ./preprocess.py
