@@ -31,6 +31,12 @@
       "reference": "https://support.apple.com/en-gb/119829"
     },
     {
+      "company": "ByteDance",
+      "user_agent": "Bytespider",
+      "comment": "Whilst not directly confirmed, ByteDance seems to use this bot to scrape data for their LLMs. There are\n[reports](https://wordpress.org/support/topic/psa-bytedance-and-bytespider-bots-recommend-blocking/) of\nBytespider ignoring robots.txt.\n",
+      "reference": ""
+    },
+    {
       "company": "Common Crawl",
       "user_agent": "CCBot",
       "comment": "Common Crawl is not a company per se, but Common Crawl-collected web crawls are used to train LLMs.\n    ",

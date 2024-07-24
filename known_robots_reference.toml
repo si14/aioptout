@@ -96,10 +96,12 @@ user_agent = "omgili"
 comment = ""
 reference = "https://webz.io/blog/web-data/what-is-the-omgili-bot-and-why-is-it-crawling-your-website/"
 
-
-# todo:
-# User-agent: cohere-ai
-# User-agent: PerplexityBot
-# User-agent: YouBot
-# User-agent: Bytespider
-# User-agent: Diffbot
+[[known_robots]]
+company = "ByteDance"
+user_agent = "Bytespider"
+comment = """\
+Whilst not directly confirmed, ByteDance seems to use this bot to scrape data for their LLMs. There are
+[reports](https://wordpress.org/support/topic/psa-bytedance-and-bytespider-bots-recommend-blocking/) of
+Bytespider ignoring robots.txt.
+"""
+reference = ""
